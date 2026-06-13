@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AgriShield - Crop and Weather Advisory</title>
+  <link rel="stylesheet" href="/static/css/style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <h1 class="logo">AgriShield</h1>
+      <p class="tagline">Crop health, weather risk and field advisory</p>
+    </div>
+    <nav class="nav">
+      <button type="button" class="nav-btn active" data-tab="advisory">Advisory</button>
+      <button type="button" class="nav-btn" data-tab="outlook">7-10 Day Outlook</button>
+      <button type="button" class="nav-btn" data-tab="historical">Historical</button>
+      <button type="button" class="nav-btn" data-tab="help">Help</button>
+    </nav>
+  </header>
+
+  <main class="main container">
+    <section id="tab-advisory" class="panel active">
+      <div class="card">
+        <h2>Get full advisory</h2>
+        <form id="form-advisory" class="form-grid">
+          <label class="field">
+            <span>City</span>
+            <input type="text" id="city" value="Bengaluru" placeholder="e.g. Bengaluru" />
+          </label>
+          <label class="field">
+            <span>Crop</span>
+            <select id="crop"></select>
+          </label>
+          <label class="field field-check">
+            <input type="checkbox" id="demo" />
+            <span>Use demo weather</span>
+          </label>
+          <label class="field field-full">
+            <span>Leaf image (optional)</span>
+            <input type="file" id="leaf-file" accept="image/*" />
+          </label>
+          <div class="form-actions">
+            <button type="submit" id="btn-advisory" class="btn btn-primary">Get full advisory</button>
+            <button type="button" id="btn-clear" class="btn btn-secondary">Clear results</button>
+          </div>
+        </form>
+      </div>
+      <div id="advisory-results" class="card hidden">
+        <h2>Advisory results</h2>
+        <div id="advisory-content"></div>
+      </div>
+    </section>
+
+    <section id="tab-outlook" class="panel">
+      <div class="card">
+        <h2>7-10 day outlook</h2>
+        <form id="form-outlook" class="form-inline">
+          <label class="field">
+            <span>Location</span>
+            <input type="text" id="outlook-city" value="Bengaluru" placeholder="e.g. Bengaluru" />
+          </label>
+          <button type="submit" class="btn btn-primary">Get outlook</button>
+        </form>
+      </div>
+      <div id="outlook-results" class="card hidden">
+        <div id="outlook-content"></div>
+      </div>
+    </section>
+
+    <section id="tab-historical" class="panel">
+      <div class="card">
+        <h2>Historical weather and risk</h2>
+        <div class="form-inline">
+          <label class="field">
+            <span>Last</span>
+            <select id="historical-days">
+              <option value="30">30</option>
+              <option value="90" selected>90</option>
+              <option value="180">180</option>
+              <option value="365">365</option>
+            </select>
+          </label>
+          <button type="button" id="btn-historical" class="btn btn-primary">Load chart</button>
+        </div>
+        <div class="chart-wrap">
+          <canvas id="chart"></canvas>
+        </div>
+      </div>
+    </section>
+
+    <section id="tab-help" class="panel">
+      <div class="card help-card">
+        <h2>How to use</h2>
+        <ul>
+          <li><strong>Advisory:</strong> Enter city and crop, optionally upload a leaf image. Click Get full advisory for weather risk, field conditions, leaf disease and fertilizer.</li>
+          <li><strong>7-10 day outlook:</strong> Enter a location for forecast-based planting suggestions.</li>
+          <li><strong>Historical:</strong> View past temperature, rainfall and risk.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <script src="/static/js/app.js"></script>
+</body>
+</html>

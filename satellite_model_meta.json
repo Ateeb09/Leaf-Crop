@@ -1,0 +1,17 @@
+{
+  "n_samples": 10000,
+  "feature_cols": [
+    "temperature",
+    "humidity",
+    "rainfall",
+    "pressure"
+  ],
+  "target_cols_reg": [
+    "soil_moisture",
+    "wind_speed"
+  ],
+  "soil_classes": [
+    "Loam",
+    "Sandy"
+  ]
+}

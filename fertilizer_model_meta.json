@@ -1,0 +1,18 @@
+{
+  "n_samples": 10000,
+  "feature_cols": [
+    "crop",
+    "soil_type",
+    "temperature",
+    "humidity",
+    "rainfall",
+    "risk_index"
+  ],
+  "fertilizer_labels": [
+    "Balanced NPK",
+    "High Nitrogen",
+    "High Phosphorus",
+    "High Potassium",
+    "Organic Compost"
+  ]
+}

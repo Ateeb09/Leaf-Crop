@@ -1,0 +1,8 @@
+{
+  "Bacterial Spot": 0,
+  "Early Blight": 1,
+  "Healthy": 2,
+  "Late Blight": 3,
+  "Septoria Leaf Spot": 4,
+  "Yellow Leaf Curl Virus": 5
+}
